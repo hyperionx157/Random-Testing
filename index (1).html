@@ -11,17 +11,11 @@
   </style>
 </head>
 <body>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const game = params.get('game');
-    if (game) {
-      const iframe = document.createElement('iframe');
-      iframe.src = game;
-      iframe.allowFullscreen = true;
-      iframe.setAttribute('allow', 'fullscreen; gamepad; autoplay');
-      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups');
-      document.body.appendChild(iframe);
-    }
-  </script>
+  <iframe
+    src="https://assets.hyperionx17.com/3ds/Pokemonplat.nds"
+    allowfullscreen
+    allow="fullscreen; gamepad; autoplay"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups"
+  ></iframe>
 </body>
 </html>
