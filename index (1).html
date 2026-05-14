@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HyperionX</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; overflow: hidden; }
+    iframe { width: 100%; height: 100%; border: none; display: block; }
+  </style>
+</head>
+<body>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const game = params.get('game');
+    if (game) {
+      const iframe = document.createElement('iframe');
+      iframe.src = game;
+      iframe.allowFullscreen = true;
+      iframe.setAttribute('allow', 'fullscreen; gamepad; autoplay');
+      iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-pointer-lock allow-popups');
+      document.body.appendChild(iframe);
+    }
+  </script>
+</body>
+</html>
